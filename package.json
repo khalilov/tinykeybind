@@ -14,6 +14,12 @@
     "zero-dependencies",
     "browser"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khalilov/tinykeybind.git"
+  },
+  "homepage": "https://github.com/khalilov/tinykeybind#readme",
+  "bugs": "https://github.com/khalilov/tinykeybind/issues",
   "license": "ISC",
   "author": "Sergey Khalilov <sergey.khalilov@gmail.com>",
   "type": "module",
@@ -37,19 +43,22 @@
     "dist",
     "README.md",
     "SPEC.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "skills"
   ],
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run build",
+    "check": "npm run test && npm run typecheck && npm run build",
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check .",
     "pack:check": "npm pack --dry-run"
   },
   "prepublishOnly": "npm run check",
   "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "jsdom": "^31.0.0",
     "prettier": "^3.9.10",
     "tsup": "^9.0.0",
     "typescript": "^6.0.3",
