@@ -1,0 +1,58 @@
+{
+  "name": "tinykeybind",
+  "version": "0.0.1",
+  "description": "Tiny keyboard binding library with chords and hold detection for browser apps",
+  "keywords": [
+    "keyboard",
+    "keybindings",
+    "hotkeys",
+    "keyboard-shortcuts",
+    "chords",
+    "key-combos",
+    "hold-detection",
+    "tiny",
+    "zero-dependencies",
+    "browser"
+  ],
+  "license": "ISC",
+  "author": "Sergey Khalilov <sergey.khalilov@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "SPEC.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build",
+    "prettier:format": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "pack:check": "npm pack --dry-run"
+  },
+  "prepublishOnly": "npm run check",
+  "devDependencies": {
+    "prettier": "^3.9.10",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  }
+}
