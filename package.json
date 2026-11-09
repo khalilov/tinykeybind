@@ -1,6 +1,6 @@
 {
   "name": "tinykeybind",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Tiny keyboard binding library with chords and hold detection for browser apps",
   "keywords": [
     "keyboard",
